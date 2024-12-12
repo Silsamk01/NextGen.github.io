@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NextGen Fellowship Form</title>
+    <link rel="icon" href="https://i.ibb.co/B4mnKh6/ngf1.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .section-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .form-section {
+            padding: 3rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .highlight {
+            color: #ff6f61;
+        }
+
+        /* Confirmation Message */
+        .confirmation-message {
+            padding: 3rem;
+            background-color: #f8f9fa;
+            text-align: center;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NextGen Fellowship Form -->
+    <section class="container form-section" id="fellowship-form">
+        <h2 class="section-header">NextGen Fellowship Form</h2>
+        <form id="fellowshipForm">
+            <!-- Personal Details -->
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" class="form-control" id="full_name" placeholder="Enter Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
+            </div>
+
+            <!-- Academic/Professional Background -->
+            <div class="form-group">
+                <label for="education_level">Highest Level of Education</label>
+                <input type="text" class="form-control" id="education_level" placeholder="Enter your highest education level" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Current Role/Occupation</label>
+                <input type="text" class="form-control" id="role" placeholder="Enter your current role" required>
+            </div>
+            <div class="form-group">
+                <label for="institution">Institution/Organization</label>
+                <input type="text" class="form-control" id="institution" placeholder="Enter your institution/organization" required>
+            </div>
+
+            <!-- Eligibility -->
+            <div class="form-group">
+                <label for="nextgen_ambassador">Have you previously served as a NextGen Ambassador?</label>
+                <select class="form-select" id="nextgen_ambassador" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Achievements -->
+            <div class="form-group">
+                <label for="achievements">List two significant academic or professional achievements</label>
+                <textarea class="form-control" id="achievements" rows="3" required></textarea>
+            </div>
+
+            <!-- Upload Requirements -->
+            <div class="form-group">
+                <label for="cv">Upload CV/Resume</label>
+                <input type="file" class="form-control" id="cv" required>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="form-group">
+                <label for="payment_method">Preferred Payment Method</label>
+                <input type="text" class="form-control" id="payment_method" placeholder="Enter your payment method" required>
+            </div>
+            <div class="form-group">
+                <label for="payment_proof">Upload Proof of Payment</label>
+                <input type="file" class="form-control" id="payment_proof" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom">Let’s Make Impact Together – Apply Now!</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Modal for Confirmation Message -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Thanks for joining the NextGen journey!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Look out for an email from us with payment details. (P.S. Check your spam folder if you don’t see it after 10 working days!)</p>
+                    <p>Meanwhile, follow us on social media to stay inspired and connected!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script to Trigger Modal -->
+    <script>
+        document.getElementById('fellowshipForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent form from submitting normally
+            var modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+            modal.show();  // Show the confirmation modal
+        });
+    </script>
+
+</body>
+
+</html>

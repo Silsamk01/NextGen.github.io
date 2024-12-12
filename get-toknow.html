@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get to Know You | NextGen</title>
+    <link rel="icon" href="https://i.ibb.co/B4mnKh6/ngf1.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles for the Get to Know You Page */
+        .hero {
+            background-color: #007bff;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .form-section {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .form-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .highlight {
+            color: #ff6f61;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .form-section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Let’s Get to Know You!</h1>
+        <p>We’re excited to learn more about you. Fill out the form and join the NextGen community!</p>
+    </section>
+
+    <!-- Get to Know You Form Section -->
+    <section class="container form-section">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="form-header">Tell Us About You</h2>
+                <form>
+                    <!-- Personal Information -->
+                    <div class="form-group">
+                        <label for="name">1. What’s your nickname? (The one everyone calls you!)</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your nickname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">2. Where are you based? (City/State/Country)</label>
+                        <input type="text" class="form-control" id="location" placeholder="Enter your location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">3. How can we reach you? Drop your email and phone number!</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <input type="tel" class="form-control mt-2" id="phone" placeholder="Phone Number" required>
+                    </div>
+
+                    <!-- Personal Interests -->
+                    <div class="form-group">
+                        <label for="current_status">4. What are you up to right now? (Student? Professional? Dream chaser?)</label>
+                        <input type="text" class="form-control" id="current_status" placeholder="Tell us what you're doing" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passion">5. What’s one thing you’re passionate about that makes you light up?</label>
+                        <textarea class="form-control" id="passion" rows="3" placeholder="Share your passion" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="volunteering">6. Have you ever been part of something cool like volunteering or leading a group? Tell us about it!</label>
+                        <textarea class="form-control" id="volunteering" rows="3" placeholder="Tell us about your experiences" required></textarea>
+                    </div>
+
+                    <!-- NextGen Related -->
+                    <div class="form-group">
+                        <label for="nextgen_reason">7. Why do you want to join the NextGen squad?</label>
+                        <textarea class="form-control" id="nextgen_reason" rows="3" placeholder="Tell us why you want to join NextGen" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="help_nextgen">8. What’s one way you think you can help others grow with NextGen?</label>
+                        <textarea class="form-control" id="help_nextgen" rows="3" placeholder="Tell us how you can help others" required></textarea>
+                    </div>
+
+                    <!-- Dream Big -->
+                    <div class="form-group">
+                        <label for="global_impact">9. Do you see yourself making an impact internationally? What’s one thing you’d love to do on a global stage?</label>
+                        <textarea class="form-control" id="global_impact" rows="3" placeholder="Share your global dreams" required></textarea>
+                    </div>
+
+                    <!-- Fun Section -->
+                    <div class="form-group">
+                        <label for="fun_fact">10. What’s a fun fact about you that makes people smile?</label>
+                        <textarea class="form-control" id="fun_fact" rows="3" placeholder="Share a fun fact" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="superpower">11. If you could have one superpower to change the world, what would it be?</label>
+                        <textarea class="form-control" id="superpower" rows="3" placeholder="Your superpower" required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom">Submit Your Answers</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 NextGen NGO. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

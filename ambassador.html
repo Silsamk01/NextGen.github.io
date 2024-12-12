@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NextGen Membership and Fellowship</title>
+    <link rel="icon" href="https://i.ibb.co/B4mnKh6/ngf1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(45deg, #ff00a0, #00c6ff); /* Gradient background for the hero section */
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeInText 2s ease-out 1s forwards;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            color: goldenrod;
+            font-size: 2rem;
+            opacity: 0;
+            animation: fadeInText 1.5s ease-out forwards;
+        }
+
+        /* Hover Effects for Membership Tiers */
+        .membership-tier {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .membership-tier:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            background-color: #f1f1f1;
+        }
+
+        .membership-tier h3 {
+            color: #007bff;
+            font-size: 1.5rem;
+        }
+
+        .membership-tier p {
+            color: #555;
+        }
+
+        .membership-tier ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .membership-tier ul li {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ff6f61;
+        }
+
+        .footer {
+            color: goldenrod;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .fellowship-program {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Membership Tiers Grid */
+        .membership-tiers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            animation: fadeInText 2s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .membership-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+        }
+
+        /* Background Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container-fluid">
+            <img src="https://i.ibb.co/B4mnKh6/ngf1.png" alt="" border="0" style="width: 50px; height: 60px;">
+            <a class="navbar-brand" href="#">NextGen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-founder.html">About the Founder</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>NextGen Membership and Fellowship Program</h1>
+        <p>Unlock Opportunities, Build Connections, and Lead the Future.</p>
+    </section>
+
+    <!-- Membership Description -->
+    <section class="container py-5">
+        <h2 class="section-header">NextGen is more than a community; it’s your gateway to global opportunities, transformative mentorship, and impactful leadership.</h2>
+        <p class="lead text-center">Our membership and fellowship programs are designed to empower young achievers to dream big, connect deeply, and grow exponentially.</p>
+    </section>
+
+    <!-- Membership Tiers Section -->
+    <section class="container py-5 membership-tiers">
+        <h2 class="section-header">Membership Tiers</h2>
+
+        <div class="membership-tier">
+            <h3>1. Achiever Membership – ₦30,000 semiannually</h3>
+            <ul>
+                <li>Early access to scholarships, internships, and event updates.</li>
+                <li>Discounts on NextGen programs and workshops.</li>
+                <li>Quarterly group coaching sessions designed to accelerate your growth.</li>
+                <li>Insider access to international opportunities and conferences.</li><span> <a href="forms.html"><i class="bi bi-box-arrow-up-right"></i></a></span>
+            </ul>
+        </div>
+
+        <div class="membership-tier">
+            <h3>2. Trailblazer Membership – ₦60,000 semiannually</h3>
+            <ul>
+                <li>All Achiever benefits, plus:</li>
+                <li>Invitations to private networking events with ambassadors, youth leaders, and global changemakers.</li>
+                <li>Priority access to NextGen-curated international trips at exclusive rates.</li>
+                <li>Personalized mentorship sessions to align your goals with global opportunities.</li>
+                <li>Premium discounts (up to 30%) on all NextGen programs and events.</li>
+                <li>Access to quarterly premium training sessions led by top professionals.</li>
+                <li>Tailored recommendations for scholarships and fellowships suited to your profile.</li><span> <a href="forms.html"><i class="bi bi-box-arrow-up-right"></i></a></span>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Student Discount -->
+    <section class="container py-5">
+        <h2 class="section-header">Student Discount</h2>
+        <p class="lead text-center">Are you a student? Get 20% off your membership fee!</p>
+       <p class="text-center">Simply fill out the membership form, upload your valid student ID, and meet the requirements. Once confirmed, you’ll receive your discount and unlock a world of NextGen opportunities.</p><span> <a href="student-discount.html"><i class="bi bi-box-arrow-up-right"></i> </a></span>
+    </section>
+
+    <!-- Fellowship Program Section -->
+    <section class="fellowship-program">
+        <div class="container py-5">
+            <h2 class="section-header">Fellowship Program</h2>
+            <p class="lead text-center">Become a NextGen Fellow: Lead, Inspire, and Partner.</p>
+            <p class="text-center">The NextGen Fellowship is for exceptional individuals ready to take their influence to the next level. Fellows are inducted yearly and gain exclusive opportunities to become individual partners of the organization, amplifying their impact within and beyond NextGen.</p>
+
+            <h4>Fellowship Perks:</h4>
+            <ul>
+                <li>Yearly induction into the distinguished NextGen Fellows Circle.</li>
+                <li>Exclusive invitations to global events and opportunities to represent NextGen on international stages.</li>
+                <li>Mentorship from world-class leaders to sharpen your leadership and vision.</li>
+                <li>Opportunities to design and lead impactful projects within NextGen.</li>
+                <li>Recognition as an individual partner of NextGen, opening doors to greater influence and collaborations.</li>
+            </ul>
+
+            <h5>Annual Fee:</h5>
+            <p class="lead">Fellows pay an annual subscription fee to maintain their status, with access to all fellowship benefits.</p> <a href="fellowship.html"><i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="container py-5">
+        <h2 class="section-header">Why Join NextGen?</h2>
+        <ul>
+            <li><strong>Build Connections:</strong> Network with ambassadors, youth leaders, and industry icons who can guide your journey.</li>
+            <li><strong>Explore Global Opportunities:</strong> Priority access to scholarships, internships, and international trips.</li>
+            <li><strong>Learn and Lead:</strong> Participate in transformative training sessions to sharpen your skills and grow your impact.</li>
+            <li><strong>Be Recognized:</strong> Fellows gain leadership opportunities and the chance to shape the future of NextGen.</li>
+        </ul>
+    </section>
+
+    <!-- How to Get Started Section -->
+    <section class="container py-5">
+        <h2 class="section-header">How to Get Started</h2>
+        <p class="lead text-center">Choose your path: Membership or Fellowship.</p>
+        <p class="text-center">Complete your registration and join a network of trailblazers shaping the future. Fellows will be contacted with details of their induction after registration.</p>
+        <div class="text-center">
+            <a href="#" class="btn btn-custom">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 NextGen. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

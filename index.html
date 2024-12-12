@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NextGen</title>
+    <link rel="icon" href="https://i.ibb.co/B4mnKh6/ngf1.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Base styling for the Hero section */
+        #home {
+            background: linear-gradient(45deg, #ff00a0, #00c6ff);
+            /* Retro gradient background */
+            color: goldenrod;
+            text-align: center;
+            padding: 100px 20px;
+            /* Adjust padding for larger content */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+            /* Soft shadow for depth */
+        }
+
+        /* Retro Animation on the title */
+        .animated-title {
+            font-family: 'Orbitron', sans-serif;
+            /* Retro font */
+            font-size: 3rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            animation: typewriter 4s steps(30) 1s forwards, fadeInText 3s ease-in forwards;
+        }
+
+        /* Retro typing effect animation */
+        @keyframes typewriter {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Fade-in effect for the text */
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Style for the paragraph with animated text */
+        .animated-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInText 3s ease-in-out 1.5s forwards;
+        }
+
+        /* Add a glowing effect to the title */
+        .animated-title {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Optional: Make the background move slowly for a more dynamic effect */
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ff00a0, #00c6ff, #ff00a0, #00c6ff);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        /* Animate the gradient background */
+        @keyframes gradientShift {
+            0% {
+                background-position: 100% 50%;
+            }
+
+            50% {
+                background-position: 0 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Highlight Animations */
+        .highlight-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Content Fade-In */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInContent 1.5s forwards;
+        }
+
+        @keyframes fadeInContent {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Button Hover Animation */
+        .btn-primary {
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        /* Navbar */
+        .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+
+        #partners .d-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            /* Ensures there's space between items */
+        }
+
+        .partner-item {
+            flex: 1 1 30%;
+            /* Flex-grow, flex-shrink, and flex-basis for equal space */
+            text-align: center;
+        }
+
+        .partner-item img {
+            max-width: 100%;
+            /* Ensures the image is responsive and adjusts to its container */
+            height: auto;
+        }
+
+        /* Small screens - Stacks the items vertically */
+        @media (max-width: 576px) {
+            .partner-item {
+                flex-basis: 100%;
+                /* Makes each item take up the full width on small screens */
+            }
+        }
+
+        /* Medium screens - Two items per row */
+        @media (max-width: 768px) {
+            .partner-item {
+                flex-basis: 48%;
+                /* Items will take 48% of the container's width */
+            }
+        }
+
+        /* Large screens - Three items per row */
+        @media (min-width: 992px) {
+            .partner-item {
+                flex-basis: 30%;
+                /* Items will take 30% of the container's width */
+            }
+        }
+
+        #mission-vision {
+            position: relative;
+            /* Helps position the pseudo-element */
+            background: #f5f5f5;
+            /* Light gray background */
+            border-radius: 50% 50% 30% 30%;
+            /* Creating a bubble effect with rounded corners */
+            padding: 40px 20px;
+            /* Padding for inner content */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            /* Soft shadow for depth */
+            margin: 40px auto;
+            /* Centering the section */
+            max-width: 800px;
+            /* Max width to prevent stretching */
+            text-align: center;
+            /* Centering the text inside */
+        }
+
+        /* Optional: Add a "tear-drop" effect using a pseudo-element */
+        #mission-vision::before {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            /* Position the drop slightly below the section */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Center the tear */
+            width: 60px;
+            height: 60px;
+            background-color: #f5f5f5;
+            /* Same background as the section */
+            border-radius: 50%;
+            /* Circular shape */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            /* Add a soft shadow for a 3D effect */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p.lead {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Base styling for the Ambassador section */
+        #ambassador {
+            background: linear-gradient(45deg, #ff00a0, #00c6ff);
+            /* Retro gradient background */
+            color: goldenrod;
+            text-align: center;
+            padding: 80px 20px;
+            /* Adjust padding for larger content */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.2);
+            /* Soft shadow for depth */
+        }
+
+        /* Retro Animation on the title */
+        .animated-title {
+            font-family: 'Orbitron', sans-serif;
+            /* Retro font */
+            font-size: 3rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            animation: typewriter 4s steps(30) 1s forwards, fadeInText 3s ease-in forwards;
+        }
+
+        /* Retro typing effect animation */
+        @keyframes typewriter {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Fade-in effect for the text */
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Style for the paragraph with animated text */
+        .animated-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInText 3s ease-in-out 1.5s forwards;
+        }
+
+        /* Add a glowing effect to the title */
+        .animated-title {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Add a glowing effect to the Register Now button */
+        .animated-button {
+            background-color: #ff00a0;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            animation: glowButton 1.5s infinite alternate;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Glowing effect for the button */
+        @keyframes glowButton {
+            0% {
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.4);
+                transform: scale(1);
+            }
+
+            100% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.6);
+                transform: scale(1.1);
+            }
+        }
+
+        /* Optional: Make the background move slowly for a more dynamic effect */
+        #ambassador::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ff00a0, #00c6ff, #ff00a0, #00c6ff);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        /* Animate the gradient background */
+        @keyframes gradientShift {
+            0% {
+                background-position: 100% 50%;
+            }
+
+            50% {
+                background-position: 0 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Contact Us Form */
+        #contact-us form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Subscription Form */
+        #subscription form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form Elements */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            border: 1px solid #ddd;
+            padding: 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        /* Buttons */
+        button[type="submit"] {
+            background-color: #ff00a0;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e6008c;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+
+            #contact-us form,
+            #subscription form {
+                padding: 20px;
+            }
+        }
+
+
+        .founder-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #007bff;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container-fluid">
+            <img src="https://i.ibb.co/B4mnKh6/ngf1.png" alt="" border="0" style="width: 50px; height: 60px;">
+            <a class="navbar-brand" href="#">NextGen </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-founder.html">About the Founder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ambassador.html">Become an Ambassador</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="home" class="hero bg-primary text-white text-center py-5">
+        <h1 style="color: goldenrod;">Welcome to NextGen! 🎉</h1>
+        <p>Empowering young minds, opening doors to endless opportunities, and coaching you toward the future you
+            deserve.</p>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section id="mission-vision" class="container py-5 fade-in">
+        <h2 class="text-center" style="color: goldenrod;">Our Mission & Vision</h2>
+        <p class="lead text-center">At NextGen, we aim to connect students and young professionals with life-changing
+            scholarships, internships, fellowships, and personalized coaching to awaken their dreams and guide them
+            toward achieving greatness.</p>
+    </section>
+
+    <!-- Vibrant Highlights -->
+    <section id="highlights" class="container py-5">
+        <h2 class="text-center" style="color: goldenrod;">Vibrant Highlights</h2>
+        <div class="row text-center">
+            <div class="col-md-4 highlight-card">
+                <i class="bi bi-star-fill display-3 text-warning"></i>
+                <h3>Discover Opportunities 🌟</h3>
+            </div>
+            <div class="col-md-4 highlight-card">
+                <i class="bi bi-globe2 display-3 text-success"></i>
+                <h3>Be Part of a Global Movement 🌍</h3>
+            </div>
+            <div class="col-md-4 highlight-card">
+                <i class="bi bi-lightbulb-fill display-3 text-info"></i>
+                <h3>Transform Lives Through Coaching and Community Projects 💡</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Founder -->
+    <section id="about-founder" class="container py-5 fade-in">
+        <h2 class="text-center" style="color: goldenrod;">About the Founder</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <p>Meet Queen-Esther Emma-Egbumokei—lawyer, global changemaker, storyteller, life coach, and dynamic public speaker! 💼✨</p>
+    
+                <p>Queen-Esther’s journey began as a young girl fascinated by the world beyond her immediate surroundings.
+                    From representing Nigeria at international conferences to spearheading life-changing initiatives for underserved communities, she’s been unstoppable in her pursuit of global impact.</p>
+                <a href="about-founder.html" class="btn btn-primary">Want her to speak at your event or coach you toward your goals? Click here to reach out!</a>
+            </div>
+            <br>
+            <br>
+            <div class="col-12 col-md-6">
+                <!-- Founder Image (Replace with actual image URL) -->
+                <img src="nexgen2.jpg" alt="Queen-Esther Emma-Egbumokei" class="img-fluid founder-img">
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Goals Section -->
+    <section id="goals" class="container py-5 fade-in">
+        <h2 class="text-center" style="color: goldenrod;">Our Goals</h2>
+        <ul>
+            <li>🎓 <strong>Unlocking Doors</strong>: Bringing scholarships, internships, and fellowships directly to
+                YOU.</li>
+            <li>🌱 <strong>Growing Futures</strong>: Hosting events that spark careers and ignite passions.</li>
+            <li>🤝 <strong>Building Connections</strong>: Recommending hidden talents to global opportunities.</li>
+            <li>🌟 <strong>Personalized Coaching</strong>: Guiding young people to awaken their dreams and take bold
+                steps.</li>
+            <li>🌍 <strong>Impacting Communities</strong>: Designing and leading projects that leave a legacy.</li>
+            <li>💬 <strong>Sharing Success</strong>: Showcasing stories to inspire the next wave of changemakers.</li>
+        </ul>
+    </section>
+
+    <!-- Become a NextGen Ambassador -->
+    <section id="ambassador" class="bg-light text-center py-5 fade-in">
+        <h2 style="color: goldenrod;">Become a NextGen Ambassador</h2>
+        <p>Ready to make a difference and represent the future? 🚀 Join us as a NextGen Ambassador!</p>
+        <a href="#" class="btn btn-primary">Register Now</a>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="container py-5 fade-in">
+        <h2 class="text-center" style="color: goldenrod;">Our Partners</h2>
+        <div class="d-flex flex-wrap justify-content-between">
+            <div class="partner-item">
+                <img src="https://i.ibb.co/kG2479r/partner2.jpg" alt="Partner 1" class="mx-3 my-2"
+                    style="max-width: 100%; height: auto;">
+                <p class="text-center">Grandeur Travels</p>
+            </div>
+            <div class="partner-item">
+                <img src="https://i.ibb.co/0ZLfY7C/partner3.jpg" alt="Partner 2" class="mx-3 my-2"
+                    style="max-width: 100%; height: auto;">
+                <p class="text-center">Change the World Model<br>United Nations Organization</p>
+            </div>
+            <div class="partner-item">
+                <img src="https://i.ibb.co/K9wyNM2/partner4.jpg" alt="Partner 3" class="mx-3 my-2"
+                    style="max-width: 100%; height: auto;">
+                <p class="text-center">Mobiprogz</p>
+            </div>
+            <div class="partner-item">
+                <img src="https://i.ibb.co/CwLVVc7/partner5.jpg" alt="Partner 4" class="mx-3 my-2"
+                    style="max-width: 100%; height: auto;">
+                <p class="text-center">Centre for African <br>American Studies (CAARS)</p>
+            </div>
+            <div class="partner-item">
+                <img src="https://i.ibb.co/w78H4hS/partner1.jpg" alt="Partner 5" class="mx-3 my-2"
+                    style="max-width: 100%; height: auto;">
+                <p class="text-center">Awareness Beyond Borders</p>
+            </div>
+            <div class="partner-item">
+                <img src="https://i.ibb.co/CBLKQQg/partner6.jpg" alt="Partner 6" class="mx-3 my-2"
+                    style="max-width: 100%; height: auto;">
+                <p class="text-center">RISTEL Resources</p>
+            </div>
+        </div>
+        <p class="text-center">Want to partner with us? Let’s change the world together!</p>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="container py-5 fade-in">
+        <h2 class="text-center" style="color: goldenrod;">Contact Us</h2>
+        <p class="lead text-center">We'd love to hear from you! Whether you have a question, suggestion, or partnership
+            inquiry, feel free to reach out to us.</p>
+        <form action="#" method="post" class="mx-auto" style="max-width: 600px;">
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Write your message"
+                    required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+    <!-- Meet the Dream Team Section -->
+    <section id="dream-team" class="container py-5 fade-in">
+        <h2 class="text-center" style="color: goldenrod;">Meet the NextGen Dream Team!</h2>
+        <p class="lead text-center">Behind every groundbreaking initiative is a team of passionate go-getters dedicated
+            to creating magic. Here’s the squad bringing NextGen to life:</p>
+
+        <div class="row text-center">
+            <!-- Team Member 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Nwokolo Stephanie</h3>
+                    <p><strong>Co-founder Extraordinaire 🌟</strong></p>
+                    <p>The backbone of NextGen’s vision.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Esumei Pure</h3>
+                    <p><strong>The Admin Whisperer 🖋</strong></p>
+                    <p>Keeping things smooth and sorted.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Chiamaka Ezedimbu</h3>
+                    <p><strong>Another Admin Ace 🗂</strong></p>
+                    <p>Because one rockstar isn’t enough!</p>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Akowe Grace</h3>
+                    <p><strong>Legal Eagle ⚖</strong></p>
+                    <p>Ensuring all we do is airtight and legit.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Olusola Olabode</h3>
+                    <p><strong>Project Maestro 🚀</strong></p>
+                    <p>Turning big ideas into reality, one step at a time.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>David Chisimdi</h3>
+                    <p><strong>Health Guru 🩺</strong></p>
+                    <p>Keeping us sharp and healthy, inside and out.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Anjolaoluwa Stephanie</h3>
+                    <p><strong>Content Wizard ✨</strong></p>
+                    <p>The creative brain behind our storytelling magic.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Silas Tega</h3>
+                    <p><strong>Tech Titan 💻</strong></p>
+                    <p>Making sure our digital dreams stay glitch-free.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 9 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Deborah Rowlands</h3>
+                    <p><strong>Wordsmith 🖊</strong></p>
+                    <p>Weaving words into inspiration with every script and story.</p>
+                </div>
+            </div>
+
+            <!-- Team Member 10 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member-card p-4 bg-light shadow rounded">
+                    <h3>Onyeagwibe Victoria</h3>
+                    <p><strong>Business Guru 💼</strong></p>
+                    <p>Helping us think big, plan smart, and grow stronger.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center mt-4">We’re on a mission, and this crew is here to make it happen. Together, we’re shaping
+            the future, one NextGen moment at a time!</p>
+    </section>
+
+
+    <!-- Subscription Section -->
+    <section id="subscription" class="bg-light text-center py-5 fade-in">
+        <h2>Stay Updated</h2>
+        <p class="lead">Join our newsletter and be the first to know about upcoming opportunities, events, and
+            initiatives!</p>
+        <form action="#" method="post" class="mx-auto" style="max-width: 600px;">
+            <div class="mb-3">
+                <label for="subscribe-email" class="form-label">Enter Your Email</label>
+                <input type="email" class="form-control" id="subscribe-email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe Now</button>
+        </form>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p style="color: goldenrod;">&copy; 2024 NextGen. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html
